@@ -4,6 +4,7 @@ import pool from "../pool.js";
 
 let theme = pool.themes[Math.floor(Math.random() * pool.themes.length)];
 let shape = pool.shapes[Math.floor(Math.random() * pool.shapes.length)];
+let angle = 25 + (Math.floor(Math.random() * 20) - 10);
 
 export function drawTree(plant, grow) {
    ctx.resetTransform();
@@ -25,11 +26,11 @@ export function drawTree(plant, grow) {
             break;
 
          case "-":
-            ctx.rotate((config.tree.angle * Math.PI) / 180);
+            ctx.rotate((angle * Math.PI) / 180);
             break;
 
          case "+":
-            ctx.rotate((-config.tree.angle * Math.PI) / 180);
+            ctx.rotate((-angle * Math.PI) / 180);
             break;
 
          case "[":

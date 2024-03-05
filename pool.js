@@ -42,10 +42,10 @@ export default {
    rules: {
       F: [
          {
-            value: "F([+F])",
+            value: "FF([+F])",
          },
          {
-            value: "F([-F])",
+            value: "FF([-F])",
          },
          {
             value: "FF",
