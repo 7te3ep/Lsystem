@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>random L system Demo</title>
+   <link rel="stylesheet" href="style.css">
+   <script src="https://kit.fontawesome.com/1555c59d50.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+   <section id="tweak">
+      <input step="0.05" min="0" max="1" value="0" type="range" id="grow">
+      <input type="range" min="0" max="5" step="1" id="gen" value="0">
+   </section>
+   <div id="scroll">
+      <div id="screen">
+         <canvas class="canvas night" id="canvas"></canvas>
+         <canvas class="canvas" id="water"></canvas>
+      </div>
+   </div>
+   <script type="module" src="index.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,225 @@
+* {
+   padding: 0px;
+   margin: 0px;
+   box-sizing: border-box;
+}
+
+body {
+   position: relative;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   width: 100vw;
+   height: 100vh;
+   overflow: hidden;
+}
+
+#scroll {
+   position: relative;
+   display: flex;
+   justify-content: center;
+   height: 100vh;
+   width: 100vw;
+   overflow-y: scroll;
+   overflow-x: hidden;
+}
+
+#tweak {
+   z-index: 10;
+   position: absolute;
+   bottom: 0px;
+}
+
+.day {
+   background: rgb(255, 255, 255);
+   background: linear-gradient(
+      0deg,
+      rgba(255, 255, 255, 1) 0%,
+      rgba(190, 224, 251, 1) 14%,
+      rgba(125, 188, 243, 1) 24%,
+      rgba(50, 146, 223, 1) 38%,
+      rgba(0, 100, 182, 1) 57%,
+      rgba(0, 20, 36, 1) 100%
+   );
+}
+
+.night {
+   background: rgb(81, 118, 166);
+   background: linear-gradient(
+      0deg,
+      rgba(81, 118, 166, 1) 0%,
+      rgba(64, 85, 158, 1) 13%,
+      rgba(9, 13, 97, 1) 32%,
+      rgba(0, 0, 0, 1) 85%
+   );
+}
+
+.morning {
+   background: rgb(223, 223, 199);
+   background: linear-gradient(
+      0deg,
+      rgba(223, 223, 199, 1) 0%,
+      rgba(146, 214, 235, 1) 20%,
+      rgba(103, 174, 195, 1) 68%,
+      rgba(9, 76, 97, 1) 100%
+   );
+}
+
+.evening {
+   background: rgb(218, 139, 241);
+   background: linear-gradient(
+      0deg,
+      rgba(218, 139, 241, 1) 0%,
+      rgba(146, 159, 235, 1) 11%,
+      rgba(105, 117, 197, 1) 33%,
+      rgba(9, 13, 97, 1) 83%
+   );
+}
+
+canvas {
+   background-color: none;
+   position: absolute;
+   left: 0px;
+   width: 100%;
+   height: 500vh;
+}
+
+button {
+   z-index: 10;
+   position: absolute;
+   inset: none;
+   border: none;
+   background-color: #3333;
+   min-width: 50px;
+   min-height: 50px;
+   font-size: 20px;
+   border-radius: 20px;
+   -webkit-border-radius: 20px;
+   -moz-border-radius: 20px;
+   -ms-border-radius: 20px;
+   -o-border-radius: 20px;
+   color: #ffffff;
+   transition: transform 0.1s ease;
+   -webkit-transition: transform 0.1s ease;
+   -moz-transition: transform 0.1s ease;
+   -ms-transition: transform 0.1s ease;
+   -o-transition: transform 0.1s ease;
+}
+
+button:hover,
+button:active {
+   transform: scale(1.1);
+   -webkit-transform: scale(1.1);
+   -moz-transform: scale(1.1);
+   -ms-transform: scale(1.1);
+   -o-transform: scale(1.1);
+   background-color: #ffffff;
+   color: #333;
+}
+
+#show {
+   top: 2vh;
+   left: 2vh;
+}
+
+#help {
+   top: 2vh;
+   right: 2vh;
+}
+
+#chatArea {
+   position: absolute;
+   display: flex;
+   left: 0px;
+   height: 80vh;
+   width: 50vw;
+   max-width: 500px;
+   padding: 20px;
+   align-items: start;
+   justify-content: center;
+}
+
+#chatBox {
+   height: 90%;
+   width: 100%;
+   padding: 0px 30px;
+   display: flex;
+   flex-direction: column-reverse;
+   text-align: left;
+   overflow-x: hidden;
+   overflow-y: scroll;
+   scrollbar-width: none;
+}
+
+#chatBox::-webkit-scrollbar {
+   display: none; /* Safari and Chrome */
+}
+
+.msg {
+   margin: 3px 0px;
+   padding: 10px;
+   border-radius: 12px;
+   background-color: #33333361;
+   font-size: 20px;
+   font-family: Arial;
+   font-weight: bolder;
+   z-index: 10;
+   display: inline;
+   height: fit-content;
+   width: 100%;
+   color: #f3f3f3;
+   -webkit-border-radius: 12px;
+   -moz-border-radius: 12px;
+   -ms-border-radius: 12px;
+   -o-border-radius: 12px;
+   word-wrap: break-word;
+}
+
+#chatInput {
+   z-index: 10;
+   position: absolute;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   height: 10%;
+   width: 100%;
+   bottom: 3vh;
+}
+
+#msg {
+   text-align: center;
+   background-color: #333333a6;
+   inset: none;
+   border: none;
+   height: 35px;
+   border-radius: 20px;
+   -webkit-border-radius: 20px;
+   -moz-border-radius: 20px;
+   -ms-border-radius: 20px;
+   -o-border-radius: 20px;
+   padding: 10px 20px;
+   font-size: 20px;
+   color: aliceblue;
+   font-weight: bolder;
+   transition: all 0.1s ease;
+   -webkit-transition: all 0.1s ease;
+   -moz-transition: all 0.1s ease;
+   -ms-transition: all 0.1s ease;
+   -o-transition: all 0.1s ease;
+}
+
+#msg::placeholder {
+   color: rgba(240, 248, 255, 0.767);
+}
+
+#msg:focus {
+   background-color: #3333339c;
+   outline: none;
+}
+
+@media (max-width: 700px) {
+   #chatArea {
+      width: 100vw;
+      min-width: 100%;
+   }
+}
